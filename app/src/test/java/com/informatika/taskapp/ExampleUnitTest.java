@@ -1,4 +1,4 @@
-package com.informatika.taskapp;
+package com.informatika.TaskApp;
 
 import org.junit.Test;
 

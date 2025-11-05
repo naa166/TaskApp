@@ -1,4 +1,4 @@
-package com.dhendra.taskapp;
+package com.informatika.TaskApp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,8 @@ import android.widget.Button;
 
 import android.widget.Toast;
 
-import com.dhendra.taskapp.model.DataManager;
-import com.dhendra.taskapp.model.Task;
+import com.informatika.TaskApp.model.DataManager;
+import com.informatika.TaskApp.model.Task;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class AddTaskActivity extends AppCompatActivity {

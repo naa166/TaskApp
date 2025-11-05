@@ -6,7 +6,8 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.dhendra.taskapp"
+        applicationId "com.informatika.TaskApp"
+        namespace "com.informatika.TaskApp"
         minSdk 21
         targetSdk 31
         versionCode 1

@@ -1,4 +1,4 @@
-package com.dhendra.taskapp.model;
+package com.informatika.TaskApp.model;
 
 import java.util.ArrayList;
 
