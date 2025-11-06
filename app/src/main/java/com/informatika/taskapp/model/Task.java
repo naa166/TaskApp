@@ -1,4 +1,4 @@
-package com.informatika.TaskApp.model;
+package com.informatika.taskapp.model;
 
 public class Task {
     public String title;

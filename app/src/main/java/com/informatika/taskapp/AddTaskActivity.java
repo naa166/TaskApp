@@ -1,4 +1,4 @@
-package com.informatika.TaskApp;
+package com.informatika.taskapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,8 @@ import android.widget.Button;
 
 import android.widget.Toast;
 
-import com.informatika.TaskApp.model.DataManager;
-import com.informatika.TaskApp.model.Task;
+import com.informatika.taskapp.model.DataManager;
+import com.informatika.taskapp.model.Task;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class AddTaskActivity extends AppCompatActivity {
@@ -56,9 +56,7 @@ public class AddTaskActivity extends AppCompatActivity {
         }
 
         // Simpan ke daftar global
-//        DataManager.taskList.add(new Task(title, deadline));
-//        Toast.makeText(this, "Tugas berhasil ditambahkan!", Toast.LENGTH_SHORT).show();
-//        finish(); // kembali ke MainActivity
+ 
 
         if (editIndex == -1) {
             // Mode tambah

@@ -1,4 +1,5 @@
-package com.informatika.TaskApp.model;
+package com.informatika.taskapp.model;
+
 
 import java.util.ArrayList;
 
