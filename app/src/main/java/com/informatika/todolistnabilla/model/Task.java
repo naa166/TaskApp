@@ -1,4 +1,4 @@
-package com.informatika.taskapp.model;
+package com.informatika.todolistnabilla.model;
 
 public class Task {
     public String title;

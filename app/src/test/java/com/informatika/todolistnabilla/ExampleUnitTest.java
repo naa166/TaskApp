@@ -1,4 +1,4 @@
-package com.informatika.TaskApp;
+package com.informatika.todolistnabilla;
 
 import org.junit.Test;
 

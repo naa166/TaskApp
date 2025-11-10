@@ -1,5 +1,4 @@
-package com.informatika.taskapp.model;
-
+package com.informatika.todolistnabilla.model;
 
 import java.util.ArrayList;
 

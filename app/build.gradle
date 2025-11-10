@@ -6,8 +6,8 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.informatika.taskapp"
-        namespace "com.informatika.taskapp"
+        applicationId "com.informatika.todolistnabilla"
+        namespace "com.informatika.todolistnabilla"
         minSdk 21
         targetSdk 31
         versionCode 1

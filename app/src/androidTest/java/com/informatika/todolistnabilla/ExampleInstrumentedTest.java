@@ -1,4 +1,4 @@
-package com.informatika.TaskApp;
+package com.informatika.todolistnabilla;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.informatika.TaskApp", appContext.getPackageName());
+        assertEquals("com.informatika.todolistnabilla", appContext.getPackageName());
     }
 }

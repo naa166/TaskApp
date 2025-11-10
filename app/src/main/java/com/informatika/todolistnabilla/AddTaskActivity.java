@@ -1,15 +1,16 @@
-package com.informatika.taskapp;
+package com.informatika.todolistnabilla;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.view.MenuItem;
 import android.widget.Button;
 
 import android.widget.Toast;
 
-import com.informatika.taskapp.model.DataManager;
-import com.informatika.taskapp.model.Task;
+import com.informatika.todolistnabilla.model.DataManager;
+import com.informatika.todolistnabilla.model.Task;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class AddTaskActivity extends AppCompatActivity {
@@ -17,33 +18,39 @@ public class AddTaskActivity extends AppCompatActivity {
     private TextInputEditText etTitle, etDeadline;
     private Button btnSave;
 
-    private int editIndex = -1; // -1 = mode tambah, >=0 = mode edit
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Tambah/Edit Tugas");
+
         etTitle = findViewById(R.id.et_title);
         etDeadline = findViewById(R.id.et_deadline);
         btnSave = findViewById(R.id.btn_save);
 
-
-        // Cek apakah ini mode edit
-        // 🔍 DEBUG: Cek apakah ada extra
-        Log.d("AddTaskActivity", "Intent has edit_index? " + getIntent().hasExtra("edit_index"));
+        // Check if this is edit mode
         if (getIntent().hasExtra("edit_index")) {
-            editIndex = getIntent().getIntExtra("edit_index", -1);
+            int editIndex = getIntent().getIntExtra("edit_index", -1);
             Task task = DataManager.taskList.get(editIndex);
             etTitle.setText(task.title);
             etDeadline.setText(task.deadline);
             btnSave.setText("Simpan Perubahan");
         }
 
-
-
         btnSave.setOnClickListener(v -> saveTask());
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void saveTask() {
@@ -55,20 +62,16 @@ public class AddTaskActivity extends AppCompatActivity {
             return;
         }
 
-        // Simpan ke daftar global
- 
-
-        if (editIndex == -1) {
-            // Mode tambah
-            DataManager.taskList.add(new Task(title, deadline));
-            Toast.makeText(this, "Tugas ditambahkan!", Toast.LENGTH_SHORT).show();
-        } else {
-            // Mode edit
+        if (getIntent().hasExtra("edit_index")) {
+            int editIndex = getIntent().getIntExtra("edit_index", -1);
             Task updated = new Task(title, deadline);
             DataManager.taskList.set(editIndex, updated);
             Toast.makeText(this, "Tugas diperbarui!", Toast.LENGTH_SHORT).show();
+        } else {
+            DataManager.taskList.add(new Task(title, deadline));
+            Toast.makeText(this, "Tugas ditambahkan!", Toast.LENGTH_SHORT).show();
         }
         finish();
-
     }
 }
+
